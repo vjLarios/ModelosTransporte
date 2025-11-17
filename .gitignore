@@ -1,0 +1,77 @@
+# Ignorar archivos generados por el sistema
+__pycache__/
+__pycache__
+*.pyc
+*.pyo
+*.swp
+
+# Ignorar archivos generados por el IDE
+.idea/
+.vscode/
+
+# Ignorar archivos generados por pip
+dist/
+build/
+venv/
+
+# Ignorar archivos de configuración
+*.ini
+*.cfg
+*.conf
+
+# Ignorar archivos de log
+*.log
+*.txt
+
+# Ignorar archivos de desarrollo
+*.pyd
+*.so
+*.dll
+*.o
+*.a
+*.prof
+*.profraw
+*.profdata
+*.o
+*.py[co]
+*.py[dod]
+*.py[cod]
+*.egg-info/
+.eggs/
+.cache/
+.pytest_cache/
+.tox/
+
+# Ignorar archivos de ciertos directorios
+node_modules/
+bower_components/
+jspm_packages/
+
+# Ignorar archivos de compilación
+*.class
+*.jar
+*.war
+*.ear
+*.apk
+*.dex
+*.obj
+*.iobj
+*.zip
+*.ipa
+*.rar
+*.7z
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+*.xz
+*.Z
+*.iso
+*.dmg
+*.bin
+*.exe
+*.dll
+*.so
+*.pyc
+*.pyo
+*.pyd
