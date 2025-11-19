@@ -14,6 +14,11 @@ def metodo_vogel():
     
     data = get_problem_data()
 
+    # Verificar si el usuario canceló la entrada de datos
+    if data is None:
+        console.print("\n[bold red]⚠ Operación cancelada: Se cerró la ventana sin finalizar.[/bold red]")
+        return None
+
     oferta = data['oferta']
     demanda = data['demanda']
     costos = data['costos']
@@ -298,6 +303,17 @@ def metodo_vogel():
     input("Presiona Enter para continuar...")
     
     console.rule("[bold blue]FIN DEL ALGORITMO DE VOGEL[/bold blue]")
+    
+    # EMPAQUETAR Y RETORNAR PARA QUE MAIN LO GUARDE
+    solucion_vogel = {
+        'asignaciones': asignaciones,
+        'costo_total': total_costo,
+        'oferta': oferta,
+        'demanda': demanda,
+        'costos': costos
+    }
+    
+    return solucion_vogel
 
 # Ejecutar el algoritmo
 if __name__ == "__main__":

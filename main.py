@@ -1,4 +1,3 @@
-# main.py
 import sys
 from pyfiglet import Figlet
 from rich.console import Console
@@ -6,6 +5,7 @@ from rich.align import Align
 import questionary
 
 from Methods.Vogel import metodo_vogel
+from Methods.paso_secuencial import metodo_paso_secuencial
 
 console = Console()
 
@@ -16,13 +16,18 @@ def show_logo():
     console.print(Align.center(logo, vertical="middle"), style="bold cyan")
 
 def interactive_menu():
-    """Menú principal con questionary que llama a módulos externos."""
+    """Menú principal que guarda la solución de Vogel en memoria."""
+    
+    # Aquí se guarda la solución. Si se corre Vogel, se actualiza.
+    solucion_guardada = None
+
     while True:
         console.clear()
         show_logo()
 
         opciones = [
             "Método de Vogel",
+            f"Método de Paso Secuencial",
             "Salir"
         ]
 
@@ -40,8 +45,14 @@ def interactive_menu():
         if seleccion == "Salir" or seleccion == None:
             console.print("\n¡Hasta pronto!", style="bold green")
             break
+            
         elif seleccion == "Método de Vogel":
-            metodo_vogel()
+            # Ejecutamos Vogel y GUARDAMOS el resultado en la variable
+            solucion_guardada = metodo_vogel()
+            
+        elif seleccion.startswith("Método de Paso Secuencial"):
+            # Pasamos la variable (tenga datos o sea None)
+            metodo_paso_secuencial(solucion_guardada)
 
 if __name__ == "__main__":
     try:
