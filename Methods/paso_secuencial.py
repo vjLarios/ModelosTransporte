@@ -85,6 +85,8 @@ def metodo_paso_secuencial(datos_previos=None):
         console.print("Se ejecutará el [bold]Método de Vogel[/bold] primero para obtener la solución inicial.")
         input("Presiona Enter para comenzar Vogel...")
         solucion_vogel = metodo_vogel()
+        if solucion_vogel is None:
+            return None
     
     # Extraer datos
     asignaciones = solucion_vogel['asignaciones']

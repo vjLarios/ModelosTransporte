@@ -11,12 +11,22 @@ def metodo_vogel():
     
     console.rule("[bold blue]ALGORITMO DE APROXIMACION DE VOGEL[/bold blue]")
     console.print()
-    
-    data = get_problem_data()
+
+    console.print("\n[bold]INGRESO DE DATOS[/bold]")
+    console.print("\n[bold]Se abrirá una ventana para ingresar los datos del problema.[/bold]")
+    console.print("\n[bold]Presiona Enter para continuar...")
+    input()
+    try:
+        data = get_problem_data()
+    except Exception as e:
+        console.print("\n[bold red]⚠ Operación cancelada: Se cerró la ventana sin finalizar.[/bold red]")
+        input("Presiona Enter para continuar...")
+        return None
 
     # Verificar si el usuario canceló la entrada de datos
     if data is None:
         console.print("\n[bold red]⚠ Operación cancelada: Se cerró la ventana sin finalizar.[/bold red]")
+        input("Presiona Enter para continuar...")
         return None
 
     oferta = data['oferta']
