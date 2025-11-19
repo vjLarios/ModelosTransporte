@@ -178,7 +178,7 @@ def metodo_paso_secuencial(datos_previos=None):
             
         else:
             console.print("\n" + "="*50)
-            console.print("[bold green]✅ NO HAY ÍNDICES NEGATIVOS. SOLUCIÓN ÓPTIMA ALCANZADA.[/bold green]")
+            console.print("[bold green]NO HAY ÍNDICES NEGATIVOS. SOLUCIÓN ÓPTIMA ALCANZADA.[/bold green]")
             optimo_encontrado = True
     
     # SOLUCIÓN FINAL
@@ -202,7 +202,7 @@ def metodo_paso_secuencial(datos_previos=None):
     
     ahorro_total = costo_inicial - costo_total
     if ahorro_total > 0:
-        console.print(f"\n[bold yellow]✨ ¡OPTIMIZACIÓN EXITOSA! Ahorro total: ${ahorro_total} ✨[/bold yellow]")
+        console.print(f"\n[bold yellow]¡OPTIMIZACIÓN EXITOSA! Ahorro total: ${ahorro_total}[/bold yellow]")
     else:
         console.print(f"\n[bold cyan]La solución de Vogel ya era óptima.[/bold cyan]")
     
