@@ -9,7 +9,7 @@ def metodo_vogel():
     """
     console = Console()
     
-    console.rule("[bold blue]ALGORITMO DE APROXIMACION DE VOGEL[/bold blue]")
+    console.rule("[bold blue]ALGORITMO DE APROXIMACIÓN DE VOGEL[/bold blue]")
     console.print()
 
     console.print("\n[bold]INGRESO DE DATOS[/bold]")
@@ -53,7 +53,7 @@ def metodo_vogel():
     console.print(table)
     input("Presiona Enter para continuar...")
     
-    console.rule("[bold yellow]INICIALIZACION[/bold yellow]")
+    console.rule("[bold yellow]INICIALIZACIÓN[/bold yellow]")
     
     # Copias para trabajar sin alterar los datos originales
     oferta_actual = oferta[:]
@@ -81,7 +81,7 @@ def metodo_vogel():
     iteracion = 1
     
     while sum(oferta_actual) > 0 and sum(demanda_actual) > 0:
-        console.rule(f"[bold green]ITERACION {iteracion}[/bold green]")
+        console.rule(f"[bold green]ITERACIÓN {iteracion}[/bold green]")
         
         # Mostrar matriz actual (solo celdas no cubiertas)
         console.print("\n[bold]MATRIZ DE COSTOS ACTUAL (celdas no asignadas):[/bold]")
@@ -106,7 +106,7 @@ def metodo_vogel():
         input("Presiona Enter para continuar...")
         
         # Calcular penalidades por fila
-        console.print("\n[bold blue]CALCULO DE PENALIDADES POR FILA:[/bold blue]")
+        console.print("\n[bold blue]CÁLCULO DE PENALIDADES POR FILA:[/bold blue]")
         penalidades_filas = []
         for i in range(len(oferta)):
             if oferta_actual[i] <= 0:
@@ -140,7 +140,7 @@ def metodo_vogel():
         input("Presiona Enter para continuar...")
         
         # Calcular penalidades por columna
-        console.print("\n[bold blue]CALCULO DE PENALIDADES POR COLUMNA:[/bold blue]")
+        console.print("\n[bold blue]CÁLCULO DE PENALIDADES POR COLUMNA:[/bold blue]")
         penalidades_columnas = []
         for j in range(len(demanda)):
             if demanda_actual[j] <= 0:
@@ -198,7 +198,7 @@ def metodo_vogel():
         if max_pen_fila >= max_pen_col:
             tipo_seleccion = "fila"
             idx_seleccionado = max_idx_fila
-            console.print(f"\n[bold green]SELECCION: Mayor penalidad es por FILA ({max_pen_fila}) en fila {idx_seleccionado+1}[/bold green]")
+            console.print(f"\n[bold green]SELECCIÓN: Mayor penalidad es por FILA ({max_pen_fila}) en fila {idx_seleccionado+1}[/bold green]")
             
             # Encontrar el costo mínimo en esa fila
             costo_min = float('inf')
@@ -213,7 +213,7 @@ def metodo_vogel():
         else:
             tipo_seleccion = "columna"
             idx_seleccionado = max_idx_col
-            console.print(f"\n[bold green]SELECCION: Mayor penalidad es por COLUMNA ({max_pen_col}) en columna {idx_seleccionado+1}[/bold green]")
+            console.print(f"\n[bold green]SELECCIÓN: Mayor penalidad es por COLUMNA ({max_pen_col}) en columna {idx_seleccionado+1}[/bold green]")
             
             # Encontrar el costo mínimo en esa columna
             costo_min = float('inf')
@@ -236,7 +236,7 @@ def metodo_vogel():
         cantidad_asignar = min(oferta_actual[idx_seleccionado], demanda_actual[col_min])
         asignaciones[idx_seleccionado][col_min] += cantidad_asignar
         
-        console.print(f"\n[bold yellow]ASIGNACION:[/bold yellow]")
+        console.print(f"\n[bold yellow]ASIGNACIÓN:[/bold yellow]")
         console.print(f"  Asignando {cantidad_asignar} unidades de O{idx_seleccionado+1} a D{col_min+1}")
         console.print(f"  Costo unitario: {costos[idx_seleccionado][col_min]}")
         console.print(f"  Costo total para esta asignación: {cantidad_asignar} x {costos[idx_seleccionado][col_min]} = {cantidad_asignar * costos[idx_seleccionado][col_min]}")
@@ -274,7 +274,7 @@ def metodo_vogel():
         input("Presiona Enter para continuar...")
         iteracion += 1
     
-    console.rule("[bold blue]SOLUCION FINAL[/bold blue]")
+    console.rule("[bold blue]SOLUCIÓN FINAL[/bold blue]")
     
     console.print("Matriz de asignaciones final:")
     table_final = Table(show_header=True, header_style="bold magenta")

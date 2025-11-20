@@ -76,7 +76,7 @@ def metodo_paso_secuencial(datos_previos=None):
     
     solucion_vogel = None
 
-    # LOGICA PARA USAR DATOS PREVIOS O CORRER VOGEL
+    # LÓGICA PARA USAR DATOS PREVIOS O EJECUTAR VOGEL
     if datos_previos:
         console.print("[bold green]✓ Utilizando solución previa guardada en memoria.[/bold green]")
         solucion_vogel = datos_previos

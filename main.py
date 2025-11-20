@@ -18,7 +18,7 @@ def show_logo():
 def interactive_menu():
     """Menú principal que guarda la solución de Vogel en memoria."""
     
-    # Aquí se guarda la solución. Si se corre Vogel, se actualiza.
+    # Aquí se guarda la solución. Si se ejecuta Vogel, se actualiza.
     solucion_guardada = None
 
     while True:
@@ -27,7 +27,7 @@ def interactive_menu():
 
         opciones = [
             "Método de Vogel",
-            f"Método de Paso Secuencial",
+            "Método de Paso Secuencial",
             "Salir"
         ]
 
@@ -42,15 +42,15 @@ def interactive_menu():
             ])
         ).ask()
 
-        if seleccion == "Salir" or seleccion == None:
+        if seleccion == "Salir" or seleccion is None:
             console.print("\n¡Hasta pronto!", style="bold green")
             break
             
         elif seleccion == "Método de Vogel":
-            # Ejecutamos Vogel y GUARDAMOS el resultado en la variable
+            # Ejecutamos Vogel y guardamos el resultado en la variable
             solucion_guardada = metodo_vogel()
             
-        elif seleccion.startswith("Método de Paso Secuencial"):
+        elif seleccion == "Método de Paso Secuencial":
             # Pasamos la variable (tenga datos o sea None)
             metodo_paso_secuencial(solucion_guardada)
 
